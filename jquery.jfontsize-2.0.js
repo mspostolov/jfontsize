@@ -42,14 +42,15 @@
     };
     apply = function() {
       return $this.each(function(i) {
-        var fontsize, size;
+        var fontsize, size, $html;
+        $html = $('html');
         if (!($(this).data("initial_size") != null)) {
           fontsize = $(this).css("font-size");
           fontsize = parseInt(fontsize.replace("px", ""));
           $(this).data("initial_size", fontsize);
         }
-        size = $(this).data("initial_size") + (current_size * opcoes.sizeChange);
-        return $(this).css("font-size", size + "px");
+        size = $(this).data("initial_size") + (current_size * opcoes.sizeChange * parseInt($html.css('font-size')))/ 16 ;
+        return $(this).css("font-size", size / parseInt($html.css('font-size')) + "rem");
       });
     };
     $(opcoes.btnMinusClasseId + ", " + opcoes.btnDefaultClasseId + ", " + opcoes.btnPlusClasseId).removeAttr("href");

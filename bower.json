@@ -1,0 +1,8 @@
+{
+  "name": "jfontsize-rem",
+  "version": "2.0.0",
+  "main": "jquery.jfontsize-rem-2.0.js",
+  "dependencies": {
+    "jquery": ">=1.2.6"
+  }
+}
